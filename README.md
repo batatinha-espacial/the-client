@@ -21,8 +21,8 @@ A client for many internet protocol and a full-featured web browser. It's not re
 
 # We need people!
 
-We need people for helping me to build the web browser and/or the basic clients.<br>
-All the project is built on C++, using `gtk` and `boost`.
+We need people for helping me to build the web browser and/or the basic clients. DM me on discord: `antonio_breno`<br>
+All the project is built on C++, using `gtk` and `boost`.<br>
 All you need to know to colaborate is a little of web development and/or the languages and libraries listed above.
 
 ## The browser
