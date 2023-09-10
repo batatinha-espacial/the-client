@@ -17,3 +17,5 @@ Links with a checkmark were fully implemented. Links without a checkmark were no
 - [ ] [hidden](attr.hidden.md)
 - [ ] [id](attr.id.md)
 - [ ] [inert](attr.inert.md)
+- [ ] [inputmode](attr.inputmode.md)
+- [ ] [is](attr.is.md)

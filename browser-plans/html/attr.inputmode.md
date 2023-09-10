@@ -9,4 +9,4 @@ It's possible values are:
 - `tel`: a telephone input keyboard including digits from 0-9, an asterisk, and a pound key.
 - `search`: a virtual keyboard optimized for search input, with the enter key labeled "Search".
 - `email` or `mail`: a virtual keyboard optimized for email addresses, including an at (@) key, and a dot com (.com) key.
-- `url` or `link`: 
+- `url` or `link`: a virtual keyboard optimized for URLs, including a slash (/) key and a dot com (.com) key.
