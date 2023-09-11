@@ -1,0 +1,3 @@
+# HTML Global Attribute - itemprop
+
+The itemprop global attribute is used to add properties to an item. Every HTML element can have an itemprop attribute specified, and an itemprop consists of a name-value pair. Each name-value pair is called a property, and a group of one or more properties forms an item. Property values are either a string or a URL and can be associated with a very wide range of elements including `<audio>`, `<embed>`, `<iframe>`, `<img>`, `<link>`, `<object>`, `<source>`, `<track>`, and `<video>`.
