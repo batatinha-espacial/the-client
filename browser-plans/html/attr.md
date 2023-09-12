@@ -27,3 +27,7 @@ Links with a checkmark were fully implemented. Links without a checkmark were no
 - [ ] [lang](attr.lang.md)
 - [ ] [nonce](attr.nonce.md)
 - [ ] [part](attr.part.md)
+- [ ] [popover](attr.popover.md)
+- [ ] [role](attr.role.md)
+- [ ] [slot](attr.slot.md)
+- [ ] [spellcheck](attr.spellcheck.md)
