@@ -25,3 +25,5 @@ Links with a checkmark were fully implemented. Links without a checkmark were no
 - [ ] [itemscope](attr.itemscope.md)
 - [ ] [itemtype](attr.itemtype.md)
 - [ ] [lang](attr.lang.md)
+- [ ] [nonce](attr.nonce.md)
+- [ ] [part](attr.part.md)
