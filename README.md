@@ -16,7 +16,7 @@ A client for many internet protocol and a full-featured web browser. It's not re
 - [ ] Start to make Text-based UDP client
 - [ ] Finish Text-based UDP client
 - [ ] Add support for TLS
-- ...
+- [ ] ...
 - [ ] Start making [a full-featured web browser](browser-plans/README.md)
 
 # We need people!
