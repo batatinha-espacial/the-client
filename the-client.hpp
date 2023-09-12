@@ -120,19 +120,26 @@ void client_tcp_receive(gpointer win) {
     try {
         while (true) {
             boost::system::error_code error;
-            uint8_t byte;
-            size_t bytesRead = boost::asio::read(*(socket.get()), boost::asio::buffer(&byte, 1), boost::asio::transfer_all(), error);
+            boost::asio::streambuf buf;
+            boost::asio::read(*(socket.get()), buf.prepare(1), boost::asio::transfer_exactly(1), error);
+            buf.commit(1);
             if (error != boost::asio::error::eof && error) {
                 throw boost::system::system_error(error);
             }
             
-            if (bytesRead != 0) {
+            std::vector<uint8_t> byteArray = streambufToBytes(buf);
+            if (byteArray.size() != 0) {
                 std::string receivedData = "< ";
-                receivedData += byteToHex(byte);
+                if (mode == TCP_HEXADECIMAL) {
+                    for (auto byte : byteArray) {
+                        receivedData += byteToHex(byte);
+                    }
+                }
                 client_insert_or_set(text_view, text_buffer, receivedData.c_str(), data->tcp_wins.at(index).get());
             }
             if (error == boost::asio::error::eof) {
                 client_insert_or_set(text_view, text_buffer, "Clonnection closed by server.", data->tcp_wins.at(index).get());
+                break;
             }
         }
     } catch (const std::exception& e) {
