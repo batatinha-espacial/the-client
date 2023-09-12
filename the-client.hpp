@@ -54,6 +54,7 @@ struct ClientTcpWindow {
     bool content_initialized;
     std::shared_ptr<boost::asio::ip::tcp::socket> conn;
     bool connected = false;
+    std::future<void> receive;
 };
 
 struct ClientMainWindow {
@@ -116,24 +117,19 @@ void client_tcp_receive(gpointer win) {
     auto text_view = data->tcp_wins.at(index)->text_view;
     auto socket = data->tcp_wins.at(index)->conn;
     auto mode = data->tcp_wins.at(index)->mode;
-    boost::asio::streambuf buffer;
     try {
         while (true) {
             boost::system::error_code error;
-            size_t bytesRead = socket->read_some(buffer, error);
+            uint8_t byte;
+            size_t bytesRead = boost::asio::read(*(socket.get()), boost::asio::buffer(&byte, 1), boost::asio::transfer_all(), error);
             if (error != boost::asio::error::eof && error) {
                 throw boost::system::system_error(error);
             }
             
-            if (buffer.size() != 0) {
-                buffer.commit(bytesRead);
-                auto bytes = streambufToBytes(buffer);
+            if (bytesRead != 0) {
                 std::string receivedData = "< ";
-                for (uint8_t byte : bytes) {
-                    receivedData += byteToHex(byte);
-                }
+                receivedData += byteToHex(byte);
                 client_insert_or_set(text_view, text_buffer, receivedData.c_str(), data->tcp_wins.at(index).get());
-                buffer.consume(bytesRead);
             }
             if (error == boost::asio::error::eof) {
                 client_insert_or_set(text_view, text_buffer, "Clonnection closed by server.", data->tcp_wins.at(index).get());
@@ -210,7 +206,9 @@ void client_tcp_connect(GtkWidget* self, gpointer win) {
     toinsert += ".";
     client_insert_or_set(text_view, text_buffer, toinsert.c_str(), data->tcp_wins.at(index).get());
     data->tcp_wins.at(index)->connected = true;
-    client_tcp_receive(win);
+    data->tcp_wins.at(index)->receive = std::async(std::launch::async, [&win]() {
+        client_tcp_receive(win);
+    });
 }
 
 // Start TCP Client
