@@ -31,3 +31,7 @@ Links with a checkmark were fully implemented. Links without a checkmark were no
 - [ ] [role](attr.role.md)
 - [ ] [slot](attr.slot.md)
 - [ ] [spellcheck](attr.spellcheck.md)
+- [ ] [tabindex](attr.tabindex.md)
+- [ ] [title](attr.title.md)
+- [ ] [translate](attr.translate.md)
+- [ ] [virtualkeyboardpolicy](attr.virtualkeyboardpolicy.md)
