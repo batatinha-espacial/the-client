@@ -2,4 +2,6 @@
 
 - Make a page about all language codes that will be supported: see [here](https://datatracker.ietf.org/doc/html/rfc5646)
 - Make a page about the HTML Global Attribute `style`
-- Make a page about the event handler atributes
+- Make pages about the event handler atributes
+- Make pages about the `aria-*` attributes
+- Update the page about the `role` global attribute using [this](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes)
