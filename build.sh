@@ -1,1 +1,1 @@
-g++ the-client.cpp -o the-client `pkg-config --libs gtk4`
+g++ the-client.cpp -o the-client -I "/usr/include/x86_64-linux-gnu/qt6" -l qt

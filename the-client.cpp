@@ -1,5 +1,6 @@
-#include "the-client.hpp"
+#include "the-client-qt.hpp"
 
-int main(int argc, char** argv) {
-    return client_run_app(argc, argv);
+int main(int argc, char **argv) {
+    Client client;
+    return client.exec();
 }

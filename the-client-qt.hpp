@@ -57,6 +57,8 @@ struct Client {
     int run(int argc, char **argv) {
         // Initialize structures
         this->init(argc, argv);
+        // Setup the `menu`
+        this->menu->setup();
         // Execute the app and return the exit code (should not be touched)
         return this->exec();
     }

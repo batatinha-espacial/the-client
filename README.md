@@ -4,8 +4,10 @@ A client for many internet protocol and a full-featured web browser. It's not re
 
 # Plans
 
-- [x] Make the menu
-- [x] Start to make TCP client
+~~- [x] Make the menu~~
+~~- [x] Start to make TCP client~~
+- [ ] Make the menu
+- [ ] Start to make TCP Client
 - [ ] Finish TCP Client
 - [ ] Start to make basic HTTP client
 - [ ] Finish basic HTTP client
