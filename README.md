@@ -1,6 +1,6 @@
 # the-client
 
-A client for many internet protocol and a full-featured web browser. It's not ready. Made in C++, with gtk and boost.
+A client for many internet protocol and a full-featured web browser. It's not ready. Made in C++, ~~with gtk and boost.~~ We are slowly switching to Qt.
 
 # Plans
 
